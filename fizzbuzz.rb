@@ -2,14 +2,21 @@ $num = 0
 loop do
     $num += 1
     break if $num >= 100
-    puts $num
-    if $num %3 == 0
-        # print $num
-        puts "Fizz"
-    end    
-    if $num %5 == 0
-        # print $num
-        puts "Buzz"
+    if $num %3 != 0 and $num %5 != 0
+        puts $num
+    else
+        if $num %3 == 0
+            print "Fizz"
+            if $num %5 != 0
+                puts ""
+            end
+        end    
+        if $num %5 == 0
+            puts "Buzz"
+        elsif $num %3 != 0
+            puts ""
+        else
+            next
+        end
     end
 end
-print $num
